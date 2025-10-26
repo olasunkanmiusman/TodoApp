@@ -28,7 +28,9 @@ const AddTaskScreen: React.FC = () => {
       setError("All todos must have a title");
       return;
     }
+    setError("")
     saveMultipleTodos(form).then(() => {
+      
       setForm([{title: ''}]);
       navigation.navigate("Drawer",{
         screen: "Todo List"
@@ -107,6 +109,7 @@ const AddTaskScreen: React.FC = () => {
             </View>
           ))}
         </ScrollView>
+        <Text style={styles.error}>{error}</Text>
         <Pressable
           onPress={handleSave}
           style={{
@@ -129,6 +132,9 @@ const AddTaskScreen: React.FC = () => {
 };
 
 const styles = StyleSheet.create({
+  error: {
+color: 'red', textAlign: "center", fontWeight: '500', fontSize: 14
+  },
   formContainer: {
     paddingHorizontal: 20, 
     gap: 15,

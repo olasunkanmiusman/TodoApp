@@ -97,7 +97,7 @@ export const styles = StyleSheet.create({
   },
   cancelButton: {
     alignItems: "flex-end",
-    marginTop: -8,
+    marginTop: -35,
   },
   cancelText: {
     fontSize: 14,
